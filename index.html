@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachmat Wahyudi - WordPress + AI Integration Specialist</title>
+    <meta name="description" content="Professional WordPress + AI Integration services for e-commerce businesses. Boost sales with AI chatbots, automated content, and smart optimization.">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --success-green: #10b981;
+            --warning-orange: #f59e0b;
+            --dark-blue: #1e40af;
+            --light-gray: #f8fafc;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--success-green) 0%, #059669 100%);
+            color: white;
+            padding: 18px 36px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+            position: relative;
+            overflow: hidden;
+            min-width: 280px;
+            text-align: center;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-3px);
+            color: white;
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+        }
+        
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            padding: 18px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .whatsapp-button:hover {
+            background: #20b954;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+        }
+        
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--success-green));
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .value-icon {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--success-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .roi-calculator {
+            background: linear-gradient(135deg, var(--light-gray) 0%, #e2e8f0 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-control {
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            padding: 15px 20px;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .service-card h3 i {
+            color: var(--primary-blue);
+            margin-right: 10px;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .service-card ul li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+        }
+        
+        .service-price {
+            color: var(--success-green);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: auto;
+        }
+        
+        .demo-chatbot {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 450px;
+            margin: 2rem auto 0;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            position: relative;
+            isolation: isolate;
+        }
+        
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .chat-messages {
+            padding: 1.5rem;
+            height: 350px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: #fafafa;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+        
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+        
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+        
+        .chat-message {
+            margin-bottom: 1rem;
+            padding: 12px 18px;
+            border-radius: 18px;
+            max-width: 85%;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .user-message {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .bot-message {
+            background: white;
+            color: var(--text-dark);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-bottom-left-radius: 4px;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #111827 100%);
+            color: white;
+            position: relative;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #25D366, #20b954);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1); }
+            100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); }
+        }
+        
+        .floating-whatsapp:hover {
+            color: white;
+            transform: scale(1.1);
+            animation: none;
+        }
+        
+        .btn-calculate {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            border: none;
+            border-radius: 12px;
+            padding: 15px 30px;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-calculate:hover {
+            background: linear-gradient(135deg, var(--dark-blue), #1e3a8a);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .roi-result-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .roi-highlight {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--success-green), #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .audit-form-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+        
+        .contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%; /* Tambah ini */
+    display: flex; /* Tambah ini */
+    flex-direction: column; /* Tambah ini */
+    justify-content: space-between; /* Tambah ini */
+}
+        
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .contact-card i {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-ctas {
+                width: 100%;
+            }
+            
+            .cta-button, .whatsapp-button {
+                width: 100%;
+                margin: 0;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 2.25rem;
+            }
+            
+            .value-card, .service-card {
+                margin-bottom: 2rem;
+            }
+            
+            .roi-calculator {
+                padding: 2rem;
+            }
+            
+            .demo-chatbot {
+                margin-top: 3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 80px 0 60px;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .cta-button, .whatsapp-button {
+                width: 100%;
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890?text=Hi%20Rachmat!%20I%27m%20interested%20in%20WordPress%20+%20AI%20integration%20services.%20Can%20we%20discuss%20my%20project?" class="floating-whatsapp" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Transform Your E-commerce with AI-Powered WordPress</h1>
+                        <p class="hero-subtitle">Boost sales by 40%, reduce customer service costs by 60%, and automate content creation with cutting-edge AI integrations that work 24/7.</p>
+                        <div class="hero-ctas d-flex flex-column flex-sm-row gap-3 align-items-start">
+                            <a href="#audit-form" class="cta-button">
+                                <i class="fas fa-search"></i> Get FREE WordPress + AI Audit
+                            </a>
+                            <a href="https://wa.me/6281234567890?text=Hi%20Rachmat!%20I%27m%20interested%20in%20WordPress%20+%20AI%20integration%20services.%20Can%20we%20discuss%20my%20project?" class="whatsapp-button">
+                                <i class="fab fa-whatsapp"></i> WhatsApp Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="demo-chatbot">
+                        <div class="chat-header">
+                            <i class="fas fa-robot"></i> AI Store Assistant Demo
+                        </div>
+                        <div class="chat-messages">
+                            <div class="chat-message bot-message">
+                                Welcome! I'm your AI shopping assistant. How can I help you find the perfect product today? 😊
+                            </div>
+                            <div class="chat-message user-message">
+                                I'm looking for wireless headphones under $100
+                            </div>
+                            <div class="chat-message bot-message">
+                                Great choice! I found 3 perfect wireless headphones under $100:<br><br>
+                                🎧 SoundPro X1 - $79 (4.8/5 stars)<br>
+                                🎧 AudioMax Wireless - $89 (4.6/5 stars)<br>
+                                🎧 BeatFlow Pro - $95 (4.7/5 stars)<br><br>
+                                Would you like detailed specs or customer reviews?
+                            </div>
+                            <div class="chat-message user-message">
+                                Show me the SoundPro X1 details
+                            </div>
+                            <div class="chat-message bot-message">
+                                Perfect! SoundPro X1 features:<br>
+                                ✅ 30hr battery life<br>
+                                ✅ Active noise cancellation<br>
+                                ✅ Quick charge (15min = 3hrs)<br>
+                                ✅ Free shipping today<br><br>
+                                Ready to add to cart? 🛒
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Why WordPress + AI Integration?</h2>
+            <p class="section-subtitle">Transform your website into an intelligent business machine that works 24/7 to grow your revenue</p>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Boost Sales by 40%</h3>
+                        <p>AI chatbots provide instant customer support and personalized product recommendations 24/7, dramatically increasing conversion rates and customer satisfaction.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Automate Everything</h3>
+                        <p>AI-powered content generation, customer service, and marketing automation. Save 20+ hours per week while maintaining high-quality output.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Competitive Edge</h3>
+                        <p>Stay ahead with cutting-edge AI features while competitors struggle with basic WordPress setups. Lead your market with innovation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROI Calculator -->
+            <div class="roi-calculator">
+                <h3 class="text-center mb-4" style="color: var(--text-dark);">Calculate Your AI ROI Potential</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label style="color: var(--text-dark); font-weight: 500;">Monthly Website Visitors:</label>
+                        <input type="number" class="form-control" id="visitors" placeholder="5000" value="5000">
+                        
+                        <label style="color: var(--text-dark); font-weight: 500;">Current Conversion Rate (%):</label>
+                        <input type="number" class="form-control" id="conversion" placeholder="2.5" value="2.5" step="0.1">
+                        
+                        <label style="color: var(--text-dark); font-weight: 500;">Average Order Value ($):</label>
+                        <input type="number" class="form-control" id="orderValue" placeholder="75" value="75">
+                        
+                        <button class="btn btn-calculate btn-lg w-100" onclick="calculateROI()" type="button">
+                            <i class="fas fa-calculator"></i> Calculate My Potential
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="roiResults" style="display: none;">
+                            <h4 style="color: var(--text-dark); margin-bottom: 1.5rem;">Your AI Integration Potential:</h4>
+                            <div class="roi-result-card">
+                                <div class="roi-highlight" id="additionalRevenue">$0</div>
+                                <p style="color: var(--text-light); margin: 0;">Additional Monthly Revenue</p>
+                                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e5e7eb;">
+                                    <small style="color: var(--text-light);">
+                                        <i class="fas fa-info-circle"></i> Based on 40% conversion improvement through AI integration
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="alert alert-success mt-3" style="border: none; background: rgba(16, 185, 129, 0.1); color: var(--success-green);">
+                                <strong>🚀 ROI Timeline:</strong> Investment typically pays for itself within 2-3 months!<br>
+                                <small><strong>Next Step:</strong> Get your FREE audit to see exactly how we'll achieve these results for your business.</small>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="#audit-form" class="btn btn-success btn-lg">
+                                    <i class="fas fa-rocket"></i> Get My FREE Audit Now
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Placeholder when no results -->
+                        <div id="roiPlaceholder" class="text-center" style="padding: 2rem; color: var(--text-light);">
+                            <i class="fas fa-calculator fa-3x mb-3" style="opacity: 0.3;"></i>
+                            <p>Enter your website data above and click "Calculate My Potential" to see your AI ROI projection.</p>
+                            <small>💡 <strong>Tip:</strong> Be realistic with your current conversion rate for accurate results.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-padding" style="background: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">Professional WordPress + AI Services</h2>
+            <p class="section-subtitle">Comprehensive AI integration solutions tailored for your e-commerce success</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <h3><i class="fas fa-comments"></i> AI Chatbot Integration</h3>
+                        <p>Smart chatbots that understand your products and guide visitors to purchase decisions 24/7 with human-like conversations.</p>
+                        <ul>
+                            <li>Custom product recommendations</li>
+                            <li>Order tracking integration</li>
+                            <li>Multi-language support</li>
+                            <li>Analytics dashboard</li>
+                            <li>Lead capture automation</li>
+                        </ul>
+                        <div class="service-price">Starting at $299</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <h3><i class="fas fa-magic"></i> AI Content Automation</h3>
+                        <p>Automatically generate high-quality product descriptions, blog posts, and marketing copy that converts visitors into customers.</p>
+                        <ul>
+                            <li>Product description generation</li>
+                            <li>Blog content automation</li>
+                            <li>SEO-optimized content</li>
+                            <li>Social media content</li>
+                            <li>Email marketing copy</li>
+                        </ul>
+                        <div class="service-price">Starting at $199</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <h3><i class="fas fa-tachometer-alt"></i> AI Site Optimization</h3>
+                        <p>AI-powered performance optimization and personalized user experiences that increase engagement and sales.</p>
+                        <ul>
+                            <li>Performance optimization</li>
+                            <li>Personalized recommendations</li>
+                            <li>Smart inventory management</li>
+                            <li>A/B testing automation</li>
+                            <li>User behavior analysis</li>
+                        </ul>
+                        <div class="service-price">Starting at $399</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <div class="alert alert-info" style="background: rgba(37, 99, 235, 0.1); border: 2px solid var(--primary-blue); color: var(--primary-blue); font-size: 1.2rem; font-weight: 600;">
+                    🎉 Complete AI Transformation Package: $699 (Save $198!)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audit Form Section -->
+    <section class="section-padding" id="audit-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="text-center mb-5">
+                        <h2 class="section-title">Get Your FREE WordPress + AI Audit</h2>
+                        <p class="section-subtitle">Discover exactly how AI can transform your e-commerce store and increase your revenue</p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h4 style="color: var(--text-dark); margin-bottom: 1.5rem;">What You'll Get (Worth $299):</h4>
+                            <ul class="list-unstyled" style="font-size: 1.1rem;">
+                                <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle text-success" style="margin-right: 10px;"></i> Complete site performance analysis</li>
+                                <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle text-success" style="margin-right: 10px;"></i> AI integration opportunities assessment</li>
+                                <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle text-success" style="margin-right: 10px;"></i> Conversion optimization recommendations</li>
+                                <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle text-success" style="margin-right: 10px;"></i> Custom AI strategy roadmap</li>
+                                <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle text-success" style="margin-right: 10px;"></i> 30-minute strategy consultation</li>
+                                <li><i class="fas fa-check-circle text-success" style="margin-right: 10px;"></i> Priority implementation timeline</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="audit-form-card">
+                                <form id="auditForm">
+                                    <div class="mb-3">
+                                        <label class="form-label" style="font-weight: 500; color: var(--text-dark);">Business Name *</label>
+                                        <input type="text" class="form-control" name="business" required placeholder="Your Business Name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" style="font-weight: 500; color: var(--text-dark);">Website URL *</label>
+                                        <input type="url" class="form-control" name="website" required placeholder="https://yourwebsite.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" style="font-weight: 500; color: var(--text-dark);">Monthly Visitors *</label>
+                                        <select class="form-control" name="visitors" required>
+                                            <option value="">Select visitor range</option>
+                                            <option value="under-1k">Under 1,000</option>
+                                            <option value="1k-5k">1,000 - 5,000</option>
+                                            <option value="5k-10k">5,000 - 10,000</option>
+                                            <option value="10k-50k">10,000 - 50,000</option>
+                                            <option value="over-50k">Over 50,000</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" style="font-weight: 500; color: var(--text-dark);">WhatsApp Number *</label>
+                                        <input type="tel" class="form-control" name="phone" required placeholder="+62 812 3456 7890">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" style="font-weight: 500; color: var(--text-dark);">Biggest Challenge (Optional)</label>
+                                        <select class="form-control" name="challenge">
+                                            <option value="">Select your main challenge</option>
+                                            <option value="low-conversion">Low conversion rates</option>
+                                            <option value="customer-service">Customer service overload</option>
+                                            <option value="content-creation">Time-consuming content creation</option>
+                                            <option value="competitor-pressure">Competitors getting ahead</option>
+                                            <option value="scaling-issues">Difficulty scaling operations</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="cta-button w-100" style="margin: 0; font-size: 1.1rem;">
+                                        <i class="fas fa-rocket"></i> Get My FREE Audit Now (Worth $299)
+                                    </button>
+                                    <p class="text-center mt-3" style="color: var(--text-light); font-size: 0.9rem;">
+                                        <i class="fas fa-lock"></i> Your information is 100% secure and confidential
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title text-white">Ready to Transform Your E-commerce?</h2>
+                    <p class="section-subtitle text-white">Professional WordPress + AI integration services with global standards and proven results</p>
+                    
+                    <div class="row text-center mb-5 g-4">
+    <div class="col-md-4">
+        <div class="contact-card h-100">
+                                <i class="fab fa-whatsapp fa-3x"></i>
+                                <h4>WhatsApp</h4>
+                                <p>Quick response within 1 hour during business hours</p>
+                                <a href="https://wa.me/6281234567890?text=Hi%20Rachmat!%20I%27m%20interested%20in%20WordPress%20+%20AI%20integration%20services.%20Can%20we%20discuss%20my%20project?" class="btn btn-outline-light">
+                                    <i class="fab fa-whatsapp"></i> +62 812 3456 7890
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+        <div class="contact-card h-100">
+                                <i class="fas fa-envelope fa-3x"></i>
+                                <h4>Email</h4>
+                                <p>Professional consultation and detailed proposals</p>
+                                <a href="mailto:rachmat@wpaispecialist.com?subject=WordPress+AI Integration Inquiry" class="btn btn-outline-light">
+                                    <i class="fas fa-envelope"></i> Send Email
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+        <div class="contact-card h-100">
+                                <i class="fas fa-calendar fa-3x"></i>
+                                <h4>Schedule Call</h4>
+                                <p>30-minute strategy session to discuss your needs</p>
+                                <a href="https://wa.me/6281234567890?text=Hi%20Rachmat!%20I%27d%20like%20to%20schedule%20a%2030-minute%20strategy%20call%20to%20discuss%20my%20WordPress%20+%20AI%20integration%20needs." class="btn btn-outline-light">
+                                    <i class="fas fa-calendar"></i> Book Consultation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="row text-center mt-5">
+                        <div class="col-md-3 col-6 mb-3">
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--success-green);">50+</div>
+                            <p style="color: rgba(255,255,255,0.8);">Projects Completed</p>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--success-green);">98%</div>
+                            <p style="color: rgba(255,255,255,0.8);">Client Satisfaction</p>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--success-green);">24/7</div>
+                            <p style="color: rgba(255,255,255,0.8);">AI Support</p>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--success-green);">40%</div>
+                            <p style="color: rgba(255,255,255,0.8);">Average Sales Boost</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5 style="color: white; margin-bottom: 1rem;">Rachmat Wahyudi - WordPress + AI Integration Specialist</h5>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Transforming e-commerce businesses with cutting-edge AI solutions that drive real results.</p>
+                    <div class="mb-3">
+                        <a href="https://wa.me/6281234567890" class="text-white me-3" style="font-size: 1.2rem;"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:rachmat@wpaispecialist.com" class="text-white me-3" style="font-size: 1.2rem;"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="text-white me-3" style="font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white" style="font-size: 1.2rem;"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end">
+    <h6 style="color: white; margin-bottom: 1.5rem;">Quick Links</h6>
+    <div class="d-flex flex-wrap justify-content-md-end justify-content-center gap-3 mb-3">
+        <a href="#audit-form" class="text-white-50 text-decoration-none">Free Audit</a>
+        <span class="text-white-50">•</span>
+        <a href="https://wa.me/6281234567890" class="text-white-50 text-decoration-none">Services</a>
+        <span class="text-white-50">•</span>
+        <a href="https://wa.me/6281234567890" class="text-white-50 text-decoration-none">Portfolio</a>
+        <span class="text-white-50">•</span>
+        <a href="https://wa.me/6281234567890" class="text-white-50 text-decoration-none">Contact</a>
+    </div>
+    <small style="color: rgba(255,255,255,0.6);">© 2025 WordPress AI Specialist. All rights reserved.</small>
+</div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ROI Calculator Function
+        function calculateROI() {
+            const visitors = parseInt(document.getElementById('visitors').value) || 0;
+            const conversion = parseFloat(document.getElementById('conversion').value) || 0;
+            const orderValue = parseFloat(document.getElementById('orderValue').value) || 0;
+            
+            if (visitors && conversion && orderValue) {
+                const currentRevenue = visitors * (conversion / 100) * orderValue;
+                const newConversion = conversion * 1.4; // 40% improvement
+                const newRevenue = visitors * (newConversion / 100) * orderValue;
+                const additionalRevenue = newRevenue - currentRevenue;
+                
+                document.getElementById('additionalRevenue').textContent = '$' + Math.round(additionalRevenue).toLocaleString();
+                document.getElementById('roiResults').style.display = 'block';
+                
+                // Scroll to results
+                document.getElementById('roiResults').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                alert('Please fill in all fields to calculate your potential ROI!');
+            }
+        }
+        
+        // Form Submission Handler
+        document.getElementById('auditForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const businessName = formData.get('business') || 'Business Owner';
+            const website = formData.get('website') || 'website';
+            const visitors = formData.get('visitors') || 'not specified';
+            const phone = formData.get('phone') || '';
+            const challenge = formData.get('challenge') || 'general optimization';
+            
+            const message = `Hi Rachmat! I want to request a FREE WordPress + AI audit for my business: *${businessName}*
+
+🌐 Website: ${website}
+📊 Monthly Visitors: ${visitors}
+📱 Phone: ${phone}
+🎯 Main Challenge: ${challenge}
+
+Please contact me to schedule the consultation. Looking forward to discussing how AI can transform my e-commerce!`;
+            
+            const whatsappUrl = 'https://wa.me/6281234567890?text=' + encodeURIComponent(message);
+            
+            // Show success message
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i> Redirecting to WhatsApp...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                }, 3000);
+            }, 1000);
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Show/hide ROI placeholder
+        function toggleROIPlaceholder() {
+            const placeholder = document.getElementById('roiPlaceholder');
+            const results = document.getElementById('roiResults');
+            
+            if (placeholder && results) {
+                if (results.style.display === 'block') {
+                    placeholder.style.display = 'none';
+                } else {
+                    placeholder.style.display = 'block';
+                }
+            }
+        }
+
+        // Enhanced input validation and real-time feedback
+        document.addEventListener('DOMContentLoaded', function() {
+            const roiInputs = ['visitors', 'conversion', 'orderValue'];
+            
+            roiInputs.forEach(inputId => {
+                const input = document.getElementById(inputId);
+                if (input) {
+                    // Add input event listeners for real-time validation
+                    input.addEventListener('input', function() {
+                        this.style.borderColor = '#e5e7eb'; // Reset border color
+                        
+                        // Basic validation styling
+                        const value = parseFloat(this.value);
+                        if (value <= 0 && this.value !== '') {
+                            this.style.borderColor = '#ef4444';
+                        } else if (value > 0) {
+                            this.style.borderColor = '#10b981';
+                        }
+                        
+                        // Special validation for conversion rate
+                        if (inputId === 'conversion' && value > 100) {
+                            this.style.borderColor = '#ef4444';
+                        }
+                    });
+                    
+                    // Prevent negative values
+                    input.addEventListener('keydown', function(e) {
+                        if (e.key === '-' || e.key === 'e' || e.key === 'E') {
+                            e.preventDefault();
+                        }
+                    });
+                }
+            });
+            
+            // Prevent chat scroll from affecting page scroll
+            const chatMessages = document.querySelector('.chat-messages');
+            
+            if (chatMessages) {
+                // Prevent wheel events from bubbling to parent when scrolling in chat
+                chatMessages.addEventListener('wheel', function(e) {
+                    const isScrollable = this.scrollHeight > this.clientHeight;
+                    const atTop = this.scrollTop === 0;
+                    const atBottom = this.scrollTop >= (this.scrollHeight - this.clientHeight);
+                    
+                    if (isScrollable) {
+                        // If scrolling up and already at top, or scrolling down and already at bottom
+                        if ((e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom)) {
+                            // Allow page scroll
+                            return;
+                        } else {
+                            // Prevent page scroll, keep chat scroll
+                            e.stopPropagation();
+                        }
+                    }
+                });
+                
+                // Prevent touch scroll conflicts on mobile
+                chatMessages.addEventListener('touchmove', function(e) {
+                    e.stopPropagation();
+                }, { passive: true });
+            }
+            
+            const animatedElements = document.querySelectorAll('.value-card, .service-card, .contact-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Dynamic chatbot animation
+        let messageIndex = 0;
+        const chatMessages = document.querySelectorAll('.chat-message');
+        
+        function animateChat() {
+            chatMessages.forEach((msg, index) => {
+                msg.style.opacity = '0';
+                msg.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    msg.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    msg.style.opacity = '1';
+                    msg.style.transform = 'translateY(0)';
+                }, index * 800);
+            });
+        }
+
+        // Start chat animation when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(animateChat, 1000);
+        });
+
+        // Add floating effect to CTA buttons
+        document.querySelectorAll('.cta-button, .whatsapp-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.02)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
